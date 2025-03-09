@@ -1,0 +1,81 @@
+1. First, one person in the group should create a public repository using their GitHub account?
+Steps : i)Go to GitHub. 
+        ii)Click on "New Repository".
+        iii)Set a repository name.
+        iv)Choose Public visibility.
+        v)Click Create Repository.
+2. This same person should then follow the instructions from GitHub to add a remote, and
+   then push their repository. Do not forget the –u flag, as suggested by GitHub?
+Command: git init (git initialization)
+         git clone "url"
+         git add .
+         git commit -m "message"
+         git push 
+3. All of the other members of the group should then be added as collaborators, so they can
+commit to the repository also?
+Steps: i) Login to GitHub 
+       ii) Navigate the created repository
+       iii) Click on SETTING
+       iv)On the left click COLLABORATORS
+       v) CLick Add People button
+       vi)Enter the username or email of the user you want to add
+       vii) Then click Add Collaborator
+   The members we added or invited will get an email of invitation.After accepting the request they will able to pull and push the file
+4. Next, everyone else in the group should clone the repository from GitHub. Verify that the
+context of the repository is what is expected?
+Command: git clone "URL"
+5. One of the group members who just cloned should now make a local commit, then push it.
+Everyone should verify that when they pull, that commit is added to their local repository
+(use git log to check for it)        ?
+Command: I have created a firstrepo.java file
+         git add .
+         git commit -m "msg"
+         git push 
+         git pull
+6. Look at each other’s git log output. Notice how the SHA-1 is the same for a given commit
+across every copy of the repository. Why is this important?
+Ans :
+  i)Ensures Integrity and Consistency:
+    The SHA-1 hash acts like a digital fingerprint for each commit.
+    If any data in the commit (files, timestamps, messages, etc.) were altered, the hash would change.
+    This guarantees that everyone has the exact same version of history.
+
+ ii)Enables Secure Collaboration:
+    Git uses SHA-1 to verify that no data is corrupted or tampered with when transferring commits between team members.
+    If a commit were somehow altered or damaged, its SHA-1 would no longer match the original, signaling an issue.
+
+ iii) Helps Track Changes Across Branches:
+    Since SHA-1 hashes are unique to each commit, Git can efficiently track changes and manage merges without confusion.
+    This is especially useful in collaborative projects with multiple branches.
+
+  iv) Ensures Reliable Version Control:
+    The hash guarantees that all team members are working with the same commit history.
+    No matter who pulls the repository, the commit history remains consistent and traceable.
+7) Two members of the group should now make a commit locally, and race to push it. To keep
+things simple, be sure to edit different files. What happens to the runner-up?
+Ans: i) Two members make local commits on different files
+     ii) Both trying to push the file on GitHub at the same time
+     iii)One will succeed first,and other will face issue.
+8) The runner-up should now pull. As a group, look at the output of the command.
+Additionally, look at the git log, and notice that there is a merge commit. You may also
+wish to view the DAG in gitk?
+Commands:  git pull
+           git log
+           git --all
+9) Repeat the last two steps a couple of times, to practice?
+Command: All created a .java file (firstrepo.java).So just 
+          git add .   (add)
+          git commit -m "msg"  (commit)
+          git push      (push)
+         If push reject means,that one members is already updated the remote repository.
+          then git pull
+          git log
+          git --all
+   
+          git add .
+          git commit -m "msg"
+          git push 
+         If push reject means,that one members is already updated the remote repository.
+          then git pull
+          git log
+          git --all
